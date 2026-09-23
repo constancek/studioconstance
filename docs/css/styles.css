@@ -64,7 +64,7 @@ nav .inq{letter-spacing:.5em}
 .hero h1{font-size:clamp(2.6rem,7vw,6rem);letter-spacing:-.01em;animation:rise 1.3s cubic-bezier(.2,.7,.2,1) both}
 .hero h1 em{display:block}
 .hero.short h1{font-size:clamp(2.4rem,6vw,4.8rem)}
-.hero p.sub{margin:26px auto 0;max-width:60ch;font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:clamp(.72rem,1.1vw,.85rem);opacity:.9;animation:rise 1.3s .2s cubic-bezier(.2,.7,.2,1) both}
+.hero p.sub{margin:26px auto 0;font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:clamp(.72rem,1.1vw,.85rem);opacity:.9;animation:rise 1.3s .2s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 /* material photo slots — replace with photography */
