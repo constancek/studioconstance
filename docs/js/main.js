@@ -8,11 +8,26 @@
     {id:"project-five",name:"Project five",loc:"Location",type:"Furnishing",m:"m-slate",text:"Project description."},
     {id:"project-six",name:"Project six",loc:"Location",type:"New build",m:"m-oxblood",text:"Project description."}
   ];
-  /* ---- Replace with real client testimonials ---- */
+  /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
   var TESTIMONIALS=[
-    {q:"Client testimonial goes here. A few sentences about what it was like to work with Constance, and how the finished home feels to live in.",n:"CLIENT NAME, NEIGHBORHOOD"},
-    {q:"Second client testimonial. Ideally one that speaks to her judgment, the honesty of the process, or how few decisions they had to make.",n:"CLIENT NAME, NEIGHBORHOOD"},
-    {q:"Third client testimonial. Something about the presentation, the reveal, or recognizing the home as theirs.",n:"CLIENT NAME, NEIGHBORHOOD"}
+    {h:"Constance understood our vision before we could even articulate it.",
+     q:["We worked with Constance and her design team to completely transform the main floor of our Indian Hill home, and the experience exceeded our expectations. We wanted a home that felt sophisticated and timeless, but still warm and comfortable for our family. Constance has an incredible eye for detail and a unique ability to bring together different styles in a way that feels effortless.", "From the initial consultation to the final installation, her team was organized, communicative, and attentive to every detail. The finished space is not only beautiful but truly reflects who we are and how we live. We couldn’t be happier with the result."],
+     n:"Elizabeth & James W.",loc:"Indian Hill"},
+    {h:"Our home finally feels like us, only better than we ever imagined.",
+     q:["After purchasing our home in Hyde Park, we knew we wanted something beyond the typical interior design experience. Constance brought a fresh perspective that was exactly what we were looking for. She introduced us to materials, textures, and design concepts we never would have considered on our own, yet somehow everything felt completely natural to our personal style.", "What impressed us most was how thoughtfully she balanced aesthetics with the practical needs of our everyday lives. Every room feels intentional, beautiful, and uniquely ours. We receive compliments from friends and family every time we entertain."],
+     n:"Caroline & David M.",loc:"Hyde Park"},
+    {h:"A designer with a truly distinctive point of view.",
+     q:["We interviewed several interior designers before choosing Studio Constance, and what immediately stood out was Constance’s perspective. She doesn’t simply follow trends or recreate spaces you’ve seen a hundred times before. She takes the time to understand your lifestyle, your personality, and the way you want your home to feel.", "Our Mount Lookout home now has a beautiful balance of contemporary elegance, warmth, and character. Every piece feels carefully selected, and the entire home flows together seamlessly. Constance pushed us creatively in the best possible way, and the result is something we never could have achieved without her."],
+     n:"Alexandra & Robert H.",loc:"Mount Lookout"},
+    {h:"The entire experience was as beautiful as the finished home.",
+     q:["We hired Studio Constance to help us redesign our living room, dining room, and primary bedroom. Having worked with designers in the past, we especially appreciated Constance’s structured approach and clear communication throughout the project.", "She listened carefully to our preferences, presented thoughtful design options, and made the entire process feel exciting rather than overwhelming. Her attention to detail is exceptional, from the furniture selections to the lighting and finishing touches. The result is a home that feels elevated without being overly formal. It is exactly the atmosphere we had hoped to create."],
+     n:"Katherine & Michael B.",loc:""},
+    {h:"She transformed our house into a home we genuinely love living in.",
+     q:["Constance has an extraordinary ability to see the potential in a space. We wanted to update our Mariemont home while preserving its original architectural character, and she approached the project with so much creativity and sensitivity.", "She incorporated modern furnishings, beautiful textures, and subtle design details that gave our home an entirely new personality without losing what made us fall in love with it in the first place. The spaces feel curated rather than decorated, and every room has its own story. We would absolutely work with Studio Constance again."],
+     n:"Victoria & Andrew L.",loc:"Mariemont"},
+    {h:"Constance brought an international perspective that made all the difference.",
+     q:["We wanted our home to feel collected, sophisticated, and personal rather than like a showroom. Constance immediately understood what we were trying to achieve. Her appreciation for architecture, art, and design from different parts of the world brought a level of depth and creativity to the project that we hadn’t experienced before.", "She combined contemporary furniture with distinctive statement pieces, rich materials, and unexpected details to create a home that feels both luxurious and inviting. We especially loved how she incorporated our existing art collection into the new design. Every space feels like a reflection of our experiences and personality."],
+     n:"Natalie & Christopher R.",loc:""}
   ];
 
   function card(p){
@@ -30,10 +45,14 @@
   });
 
   // testimonials
-  var ti=0,tq=document.querySelector('#testi-box .testi'),tn=document.querySelector('#testi-box .testi-name'),dots=document.querySelector('.dots');
+  function byline(t){return (t.n+(t.loc?', '+t.loc:'')).toUpperCase();}
+  var ti=0,th=document.querySelector('#testi-box .testi-head'),tq=document.querySelector('#testi-box .testi'),tn=document.querySelector('#testi-box .testi-name'),dots=document.querySelector('.dots');
   TESTIMONIALS.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Testimonial '+(i+1));d.addEventListener('click',function(){showT(i)});dots.appendChild(d)});
-  function showT(i){ti=i;tq.textContent=TESTIMONIALS[i].q;tn.textContent=TESTIMONIALS[i].n;dots.querySelectorAll('button').forEach(function(d,j){d.setAttribute('aria-pressed',String(j===i))});}
+  function showT(i){ti=i;th.textContent=TESTIMONIALS[i].h;tq.textContent=TESTIMONIALS[i].q[0];tn.textContent=byline(TESTIMONIALS[i]);dots.querySelectorAll('button').forEach(function(d,j){d.setAttribute('aria-pressed',String(j===i))});}
   showT(0);
+  document.getElementById('testi-list').innerHTML=TESTIMONIALS.map(function(t){
+    return '<blockquote class="review"><p class="review-head">'+t.h+'</p>'+t.q.map(function(x){return '<p>'+x+'</p>'}).join('')+'<footer>'+byline(t)+'</footer></blockquote>';
+  }).join('');
 
   // router
   var head=document.querySelector('.site-head');
