@@ -55,11 +55,11 @@ nav .inq{letter-spacing:.5em}
 .page{display:none}.page.active{display:block}
 
 /* heroes */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F3EFE8;background:#2E2923;overflow:hidden;padding:0}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F4F1EE;background:#1F384E;overflow:hidden;padding:0}
 .hero.short{min-height:68vh;min-height:68svh}
 .hero > .fill{position:absolute;inset:0}
 .hero svg.room{position:absolute;inset:0;width:100%;height:100%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,17,14,.72) 0%,rgba(20,17,14,.1) 55%,rgba(20,17,14,.25) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,28,40,.55) 0%,rgba(15,28,40,.2) 55%,rgba(15,28,40,.3) 100%)}
 .hero-text{position:relative;z-index:2;padding-top:72px;max-width:1000px;width:100%}
 .hero h1{font-size:clamp(2.6rem,7vw,6rem);letter-spacing:-.01em;animation:rise 1.3s cubic-bezier(.2,.7,.2,1) both}
 .hero h1 em{display:block}
@@ -71,13 +71,13 @@ nav .inq{letter-spacing:.5em}
 .photo{position:relative;overflow:hidden;background:var(--stone);margin:0}
 .photo figcaption{position:absolute;left:14px;bottom:12px;font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.88);text-shadow:0 1px 6px rgba(0,0,0,.35)}
 .m-plaster{background:radial-gradient(120% 90% at 20% 15%,#EFEAE2 0%,transparent 60%),radial-gradient(90% 80% at 85% 80%,#B9AE9E 0%,transparent 65%),radial-gradient(60% 50% at 60% 40%,#D8CFC2 0%,transparent 70%),#CBC1B3}
-.m-walnut{background:repeating-linear-gradient(92deg,rgba(0,0,0,.08) 0 2px,transparent 2px 9px),repeating-linear-gradient(88deg,rgba(255,230,200,.06) 0 1px,transparent 1px 23px),linear-gradient(180deg,#5B4230,#3E2C20 60%,#4A3526)}
+.m-walnut{background:repeating-linear-gradient(92deg,rgba(0,0,0,.06) 0 2px,transparent 2px 9px),linear-gradient(180deg,#3A5064,#1F384E 60%,#2C4458)}
 .m-hinoki{background:repeating-linear-gradient(90deg,rgba(120,90,50,.12) 0 1px,transparent 1px 14px),repeating-linear-gradient(90deg,rgba(120,90,50,.08) 0 3px,transparent 3px 41px),linear-gradient(160deg,#E6D6BC,#D6C1A0)}
 .m-travertine{background:repeating-linear-gradient(178deg,rgba(150,120,90,.14) 0 1px,transparent 1px 7px,rgba(255,255,255,.12) 7px 9px,transparent 9px 31px),linear-gradient(180deg,#E2D5C3,#CDBBA3)}
-.m-steel{background:radial-gradient(70% 60% at 30% 30%,#4A4B4B 0%,transparent 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),linear-gradient(135deg,#2A2B2C,#1B1C1D)}
+.m-steel{background:radial-gradient(70% 60% at 30% 30%,#2C4458 0%,transparent 70%),linear-gradient(135deg,#1F384E,#15222F)}
 .m-linen{background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 1px,transparent 1px 4px),#D9D2C6}
-.m-slate{background:repeating-linear-gradient(170deg,rgba(255,255,255,.04) 0 2px,transparent 2px 17px),linear-gradient(200deg,#5C6166,#3F4347)}
-.m-oxblood{background:radial-gradient(80% 70% at 70% 30%,#7C3129 0%,transparent 70%),linear-gradient(160deg,#4E1C17,#2E110E)}
+.m-slate{background:repeating-linear-gradient(170deg,rgba(255,255,255,.04) 0 2px,transparent 2px 17px),linear-gradient(200deg,#6B7F63,#4C6140)}
+.m-oxblood{background:radial-gradient(80% 70% at 70% 30%,#D4AEB0 0%,transparent 70%),linear-gradient(160deg,#C39295,#A87578)}
 .m-marble{background:linear-gradient(115deg,transparent 40%,rgba(120,120,120,.18) 41%,transparent 43%),linear-gradient(60deg,transparent 62%,rgba(120,120,120,.12) 63%,transparent 64.5%),radial-gradient(100% 80% at 30% 20%,#F4F2EE,#DAD7D1)}
 .ph-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:rgba(40,32,24,.55);text-align:center;padding:16px}
 
@@ -109,6 +109,8 @@ nav .inq{letter-spacing:.5em}
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,7vw,110px);align-items:center}
 .split.rev{grid-template-columns:1.1fr .9fr}
 .portrait{aspect-ratio:4/5}
+.photo > img{width:100%;height:100%;object-fit:cover}
+.portrait img{object-position:43% 50%}
 .split h2{font-size:clamp(2.1rem,4.4vw,3.6rem)}
 .kicker{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--muted);margin:12px 0 28px}
 .rule{width:64px;height:1px;background:var(--ink);margin:0 0 28px;border:0}
