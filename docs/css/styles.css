@@ -129,6 +129,10 @@ nav .inq{letter-spacing:.5em}
 .testi-name{margin-top:26px;font-size:.78rem;letter-spacing:.24em}
 .dark .body{margin:44px auto 0;max-width:62ch;opacity:.86;text-align:left;columns:2 280px;column-gap:48px}
 .dark .coda{margin-top:36px;font-family:var(--serif);font-style:italic;font-size:1.25rem}
+.testi-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(12px,4vw,48px)}
+.t-arrow{width:52px;height:52px;border-radius:50%;border:1px solid rgba(244,241,238,.55);background:none;color:var(--on-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .3s,color .3s,border-color .3s}
+.t-arrow:hover{background:var(--on-dark);color:var(--umber);border-color:var(--on-dark)}
+@media (max-width:640px){.testi-row{grid-template-columns:1fr 1fr;gap:18px}.testi-row #testi-box{grid-column:1/-1;grid-row:1}.t-arrow{grid-row:2;width:46px;height:46px}.t-arrow[data-dir="-1"]{justify-self:end}}
 .dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
 .dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--on-dark);background:none;padding:0;cursor:pointer}
 .dots button[aria-pressed="true"]{background:var(--on-dark)}
