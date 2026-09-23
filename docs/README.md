@@ -12,7 +12,7 @@ Static, single-page site (no build step, no dependencies). Open `index.html` in 
 If you move the site onto a CMS (Squarespace, Webflow, WordPress), each `<div class="page" id="page-...">` block maps to one real page.
 
 ## Fonts
-Google Fonts, loaded in `<head>`: Bodoni Moda (headings) and Jost (body and navigation).
+Google Fonts, loaded in `<head>`: Cormorant Garamond (headings) and Nunito Sans (body and navigation).
 To change fonts, edit the `--serif` and `--sans` variables in `styles.css` and the Google Fonts link.
 
 ## Placeholder imagery
