@@ -1,6 +1,6 @@
 :root{
-  --paper:#FFFFFF; --stone:#E7E2DE; --stone-2:#D2CAC3; --ink:#1F384E; --umber:#1F384E;
-  --muted:#5E6E7C; --lacquer:#4C6140; --rose:#C39295; --on-dark:#F4F1EE;
+  --paper:#FFFFFF; --stone:#F4EEFB; --stone-2:#DDD0EE; --ink:#2D2545; --umber:#3A2D5C;
+  --muted:#6A6380; --lacquer:#7646C8; --rose:#8ADBF0; --on-dark:#F6F2FB;
   --serif:"Cormorant Garamond","Garamond",Georgia,serif;
   --sans:"Nunito Sans","Avenir Next",system-ui,sans-serif;
   --wrap:1240px;
@@ -9,9 +9,9 @@
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--paper:#131E28;--stone:#1B2A37;--stone-2:#2C3E4E;--ink:#ECEFF2;--umber:#0D1620;--muted:#A3B0BC;--lacquer:#9DB38F;--rose:#D4A9AC}
+  :root:not([data-theme="light"]){--paper:#1A1528;--stone:#241D36;--stone-2:#362C4E;--ink:#EEEAF5;--umber:#120E1C;--muted:#ABA3BF;--lacquer:#B99BD9;--rose:#8ADBF0}
 }
-:root[data-theme="dark"]{--paper:#131E28;--stone:#1B2A37;--stone-2:#2C3E4E;--ink:#ECEFF2;--umber:#0D1620;--muted:#A3B0BC;--lacquer:#9DB38F;--rose:#D4A9AC}
+:root[data-theme="dark"]{--paper:#1A1528;--stone:#241D36;--stone-2:#362C4E;--ink:#EEEAF5;--umber:#120E1C;--muted:#ABA3BF;--lacquer:#B99BD9;--rose:#8ADBF0}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
@@ -34,7 +34,9 @@ section{padding:clamp(76px,11vw,150px) 0}
 .site-head{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);color:#F3EFE8;transition:background .4s,color .4s}
 .site-head.solid{background:var(--paper);color:var(--ink);box-shadow:0 1px 0 var(--stone-2)}
 .head-row{display:flex;align-items:center;justify-content:space-between;height:72px}
-.mark{text-decoration:none;font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em;white-space:nowrap}
+.mark{text-decoration:none;font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em;white-space:nowrap;display:flex;align-items:center;gap:12px}
+.mark-logo{width:46px;height:46px;border-radius:10px;flex:none}
+.mark-text{display:block;line-height:1.1}
 .mark small{display:block;font-family:var(--sans);font-size:.56rem;letter-spacing:.34em;opacity:.8;margin-top:2px}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:clamp(16px,2.6vw,36px)}
 nav a{text-decoration:none;font-size:.76rem;letter-spacing:.2em;padding:6px 0;border-bottom:1px solid transparent}
@@ -55,11 +57,11 @@ nav .inq{letter-spacing:.5em}
 .page{display:none}.page.active{display:block}
 
 /* heroes */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F4F1EE;background:#1F384E;overflow:hidden;padding:0}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F6F2FB;background:#3A2D5C;overflow:hidden;padding:0}
 .hero.short{min-height:68vh;min-height:68svh}
 .hero > .fill{position:absolute;inset:0}
 .hero svg.room{position:absolute;inset:0;width:100%;height:100%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,28,40,.55) 0%,rgba(15,28,40,.2) 55%,rgba(15,28,40,.3) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,20,50,.55) 0%,rgba(30,20,50,.2) 55%,rgba(30,20,50,.3) 100%)}
 .hero-text{position:relative;z-index:2;padding-top:72px;max-width:1000px;width:100%}
 .hero h1{font-size:clamp(2.6rem,7vw,6rem);letter-spacing:-.01em;animation:rise 1.3s cubic-bezier(.2,.7,.2,1) both}
 .hero h1 em{display:block}
@@ -71,13 +73,13 @@ nav .inq{letter-spacing:.5em}
 .photo{position:relative;overflow:hidden;background:var(--stone);margin:0}
 .photo figcaption{position:absolute;left:14px;bottom:12px;font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.88);text-shadow:0 1px 6px rgba(0,0,0,.35)}
 .m-plaster{background:radial-gradient(120% 90% at 20% 15%,#EFEAE2 0%,transparent 60%),radial-gradient(90% 80% at 85% 80%,#B9AE9E 0%,transparent 65%),radial-gradient(60% 50% at 60% 40%,#D8CFC2 0%,transparent 70%),#CBC1B3}
-.m-walnut{background:repeating-linear-gradient(92deg,rgba(0,0,0,.06) 0 2px,transparent 2px 9px),linear-gradient(180deg,#3A5064,#1F384E 60%,#2C4458)}
+.m-walnut{background:repeating-linear-gradient(92deg,rgba(0,0,0,.06) 0 2px,transparent 2px 9px),linear-gradient(180deg,#5E4C8A,#3A2D5C 60%,#4A3A72)}
 .m-hinoki{background:repeating-linear-gradient(90deg,rgba(120,90,50,.12) 0 1px,transparent 1px 14px),repeating-linear-gradient(90deg,rgba(120,90,50,.08) 0 3px,transparent 3px 41px),linear-gradient(160deg,#E6D6BC,#D6C1A0)}
 .m-travertine{background:repeating-linear-gradient(178deg,rgba(150,120,90,.14) 0 1px,transparent 1px 7px,rgba(255,255,255,.12) 7px 9px,transparent 9px 31px),linear-gradient(180deg,#E2D5C3,#CDBBA3)}
-.m-steel{background:radial-gradient(70% 60% at 30% 30%,#2C4458 0%,transparent 70%),linear-gradient(135deg,#1F384E,#15222F)}
+.m-steel{background:radial-gradient(70% 60% at 30% 30%,#4A3A72 0%,transparent 70%),linear-gradient(135deg,#3A2D5C,#241B3B)}
 .m-linen{background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 1px,transparent 1px 4px),#D9D2C6}
-.m-slate{background:repeating-linear-gradient(170deg,rgba(255,255,255,.04) 0 2px,transparent 2px 17px),linear-gradient(200deg,#6B7F63,#4C6140)}
-.m-oxblood{background:radial-gradient(80% 70% at 70% 30%,#D4AEB0 0%,transparent 70%),linear-gradient(160deg,#C39295,#A87578)}
+.m-slate{background:repeating-linear-gradient(170deg,rgba(255,255,255,.04) 0 2px,transparent 2px 17px),linear-gradient(200deg,#CBB5E6,#B99BD9)}
+.m-oxblood{background:radial-gradient(80% 70% at 70% 30%,#B5E9F6 0%,transparent 70%),linear-gradient(160deg,#8ADBF0,#6CC4DC)}
 .m-marble{background:linear-gradient(115deg,transparent 40%,rgba(120,120,120,.18) 41%,transparent 43%),linear-gradient(60deg,transparent 62%,rgba(120,120,120,.12) 63%,transparent 64.5%),radial-gradient(100% 80% at 30% 20%,#F4F2EE,#DAD7D1)}
 .ph-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:rgba(40,32,24,.55);text-align:center;padding:16px}
 
