@@ -24,7 +24,7 @@ The home hero is an inline SVG illustration; replace it with a full-bleed photog
 
 ## Content to replace before launch
 - [ ] Hero photography (home and each page hero)
-- [ ] Portrait of Constance Kang (home and The Studio)
+- [ ] Portrait of Constance Kent (home and The Studio)
 - [ ] 6 press logos (home "As featured in" band)
 - [ ] 6 press features (Press page: cover image, publication, headline, date, link)
 - [ ] 3 client testimonials: `TESTIMONIALS` array at the top of `js/main.js`
