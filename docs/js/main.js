@@ -33,6 +33,26 @@
       {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-08.jpg",alt:"The bar and wine wall seen from the entry, with patterned terrazzo tile floor"},
       {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-09.jpg",alt:"Lounge with twin yellow velvet banquettes and brass lamps before a garden window wall"},
       {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-10.jpg",alt:"Yellow velvet banquette in afternoon light with a round plaster side table"}
+     ]},
+    {id:"manhattan-condo",name:"Manhattan Condo",loc:"Manhattan, New York City",type:"Full interior design",
+     text:"A high-floor Manhattan condominium designed as a calm, light-filled retreat above the city. Pale oak millwork shapes every room, from curved piers that frame an onyx entry console to built-in bookcases around a clean-lined fireplace. Sunburst marquetry doors and alabaster sconces add quiet ceremony, while a sculptural curved sofa, shearling chairs, and lacquered coffee tables keep the living room soft and inviting. A rounded Calacatta island anchors the kitchen and bar, and the private rooms continue the same restraint: upholstered and grasscloth walls in the bedroom, a warm oak dressing room, and a powder room built around a floating marble vanity.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:0,room:"The living room"},{i:4,room:"The kitchen"}],
+     images:[
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-01.jpg",alt:"Open living room with a curved ivory sofa, sculptural lacquer coffee tables, and a Calacatta marble bar",wide:true},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-02.jpg",alt:"Entry with an onyx console on column legs framed by curved oak piers"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-03.jpg",alt:"Fireplace wall with an oak bookcase, shearling armchairs, and a large ink artwork"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-04.jpg",alt:"Sunburst marquetry doors with alabaster sconces beside shearling lounge chairs"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-05.jpg",alt:"Calacatta marble kitchen island with upholstered oak stools and an antiqued mirror bar"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-06.jpg",alt:"Kitchen and bar wall in oak with a rounded marble island and three stools",wide:true},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-07.jpg",alt:"Round marble dining table with blue boucle chairs beneath a sculptural woven pendant"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-08.jpg",alt:"Dining room with a marble pedestal table, oak sideboard, and abstract painting"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-09.jpg",alt:"Primary bedroom with an upholstered wall, oak paneling, and a cushioned window seat"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-10.jpg",alt:"Bedside detail with an oak nightstand and alabaster lamp against the upholstered headboard wall"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-11.jpg",alt:"Grasscloth bedroom wall with a pale oak dresser, brass floor lamp, and abstract art"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-12.jpg",alt:"Dressing room with oak wardrobes, a marble-topped island, and a hanging round mirror"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-13.jpg",alt:"Powder room with a floating Calacatta vanity, oak-framed mirror, and bronze sconces"},
+      {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-14.jpg",alt:"Powder room grasscloth walls and a lit marble shelf beneath the floating vanity"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
@@ -61,14 +81,14 @@
     var fig=img?'<figure class="photo"><img src="'+img+'" alt="" loading="lazy"></figure>':'<figure class="photo '+(p.m||'m-plaster')+'"><figcaption>Project photograph</figcaption></figure>';
     return '<a class="project" href="#project/'+p.id+'" data-type="'+p.type+'">'+fig+'<h3>'+(label||p.name)+'</h3><span>'+(sub||'VIEW PROJECT')+'</span></a>';
   }
-  var homeCards=[[0,3],[0,7],[1,0]].filter(function(x){return PROJECTS[x[0]]}).map(function(x){
+  var homeCards=[[0,3],[2,4],[1,0]].filter(function(x){return PROJECTS[x[0]]}).map(function(x){
     var p=PROJECTS[x[0]],f=p.feature.filter(function(f){return f.i===x[1]})[0];
     return card(p,p.images[x[1]].src,f?f.room:p.name,p.name.toUpperCase());
   });
   document.getElementById('home-projects').innerHTML=homeCards.join('');
   var pgrid=document.getElementById('pgrid');
   function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(function(p){return card(p,p.images?p.images[0].src:null)}).join('');}
-  if(PROJECTS.length<3)document.querySelector('.filters').style.display='none';
+  document.querySelector('.filters').style.display='none';
   renderGrid('all');
   document.querySelectorAll('.filters button').forEach(function(b){
     b.addEventListener('click',function(){
