@@ -238,7 +238,7 @@
   nav.addEventListener('click',function(e){if(e.target.tagName==='A'&&nav.classList.contains('open'))btn.click();});
 
   // inquiry form: sends through Web3Forms to the studio inbox; falls back to an email draft
-  var FORM_KEY='';   /* paste the Web3Forms access key here */
+  var FORM_KEY='5c9b6fdc-8c51-430b-9f04-e0bca8c6b74d';   /* Web3Forms access key (public by design) */
   var STUDIO_EMAIL='info@studio2kiwi.com';
   var sendBtn=document.getElementById('f-send');
   sendBtn.addEventListener('click',function(){
