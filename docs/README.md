@@ -4,7 +4,7 @@ Static, single-page site (no build step, no dependencies). Open `index.html` in 
 
 ## Structure
 - `index.html`: all page content. Pages are sections switched by URL hash:
-  `#home`, `#studio`, `#services`, `#portfolio`, `#project/<id>`, `#press`, `#inquire`.
+  `#home`, `#studio`, `#services`, `#portfolio`, `#project/<id>`, `#inquire`.
 - `css/styles.css`: all styles. Colors and fonts are CSS variables at the top of the file (`:root`).
 - `js/main.js`: hash router, mobile menu, testimonial rotator, portfolio filter, inquiry form.
 - `images/`: empty; put project photography here.
@@ -25,13 +25,11 @@ The home hero is an inline SVG illustration; replace it with a full-bleed photog
 ## Content to replace before launch
 - [ ] Hero photography (home and each page hero)
 - [ ] Portrait of Constance Kent (home and The Studio)
-- [ ] 6 press logos (home "As featured in" band)
-- [ ] 6 press features (Press page: cover image, publication, headline, date, link)
 - [ ] 3 client testimonials: `TESTIMONIALS` array at the top of `js/main.js`
 - [ ] 6 portfolio projects: `PROJECTS` array at the top of `js/main.js` (name, location, type, description)
 - [ ] Project gallery photos and photographer credit (project detail page)
 - [ ] Phone number (Inquire page)
-- [ ] Email: `hello@studio2kiwi.com` and `press@studio2kiwi.com` are placeholders
+- [ ] Email: `hello@studio2kiwi.com` is a placeholder
 - [ ] Investment ranges in the inquiry form dropdown
 
 ## Inquiry form

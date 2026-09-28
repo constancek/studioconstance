@@ -63,7 +63,7 @@
   var head=document.querySelector('.site-head');
   function route(){
     var h=(location.hash||'#home').slice(1), parts=h.split('/'), key=parts[0];
-    var known=['home','studio','services','portfolio','project','press','inquire'];
+    var known=['home','studio','services','portfolio','project','inquire'];
     if(known.indexOf(key)<0) key='home';
     if(key==='project'){
       var p=PROJECTS.filter(function(x){return x.id===parts[1]})[0]||PROJECTS[0];
@@ -81,7 +81,7 @@
       var t=a.getAttribute('href').slice(1);
       if(t===key||(key==='project'&&t==='portfolio'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
-    var titles={home:'Studio 2Kiwi | Interior Architecture & Design',studio:'The Studio | Studio 2Kiwi',services:'Services | Studio 2Kiwi',portfolio:'Portfolio | Studio 2Kiwi',project:'Portfolio | Studio 2Kiwi',press:'Press | Studio 2Kiwi',inquire:'Inquire | Studio 2Kiwi'};
+    var titles={home:'Studio 2Kiwi | Interior Architecture & Design',studio:'The Studio | Studio 2Kiwi',services:'Services | Studio 2Kiwi',portfolio:'Portfolio | Studio 2Kiwi',project:'Portfolio | Studio 2Kiwi',inquire:'Inquire | Studio 2Kiwi'};
     document.title=titles[key];
     window.scrollTo(0,0); onScroll();
   }
