@@ -95,6 +95,20 @@
       {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-08.jpg",alt:"Bedroom with an upholstered bed, oak bench, and a wall of windows onto the garden"},
       {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-09.jpg",alt:"Guest bedroom with an oak dresser, abstract art, and a plush gray rug"},
       {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-10.jpg",alt:"Primary bath with a long oak vanity, glass globe sconces, walk-in shower, and freestanding tub"}
+     ]},
+    {id:"columbus-modern-home",name:"Columbus Modern Home",loc:"Columbus, Ohio",type:"New construction & interior design",
+     text:"A crisp, modern new build in Columbus, planned around one generous great room. Walls of black-framed glass and clerestory windows pull daylight deep into the house, while twin ivory sofas, green velvet armchairs, and a sculptural chandelier give the space warmth and weight. The kitchen balances matte black cabinetry with a walnut hood and a waterfall quartz island, and a live-edge walnut dining table sits beside a black steel and glass study that keeps work close without closing it off. Upstairs, a lounge with its own kitchenette and a serene primary suite under a tray ceiling complete a home that feels open, calm, and made for entertaining.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:2,room:"The kitchen"}],
+     images:[
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-01.jpg",alt:"Great room with twin ivory sofas, green velvet armchairs, a teak root coffee table, and a sculptural black chandelier beneath clerestory windows"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-02.jpg",alt:"Open great room looking toward the kitchen, floating staircase, and glass-walled study"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-03.jpg",alt:"Kitchen with matte black cabinetry, a walnut hood, waterfall quartz island, and oak counter stools"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-04.jpg",alt:"Dining room with a live-edge walnut table, bouclé chairs, and a linear pendant beside the glass-walled study"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-05.jpg",alt:"Glass-walled study framed in black steel off the main hall"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-06.jpg",alt:"Upstairs lounge with a black kitchenette, green leather swivel chairs, and a graphic black-and-white rug"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-07.jpg",alt:"Primary bedroom with a tray ceiling, bouclé bed and bench, and a pair of swivel chairs"},
+      {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-08.jpg",alt:"Primary bedroom looking toward the ensuite bath and balcony doors"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
