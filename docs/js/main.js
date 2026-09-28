@@ -78,6 +78,23 @@
       {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-03.jpg",alt:"Bentwood lounge chair, olive tree, and plaster side table beside an oak arch"},
       {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-04.jpg",alt:"Kitchen with violet-veined marble backsplash and a rounded oak island that extends into a dining table",wide:true},
       {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-05.jpg",alt:"Dining room with a brass and mesh linear pendant, oak table, and cane-back chairs",wide:true,pos:"center 20%"}
+     ]},
+    {id:"cincinnati-modern-home",name:"Cincinnati Modern Home",loc:"Cincinnati, Ohio",type:"New construction & interior design",
+     text:"A new-build family home in Cincinnati, designed to feel open, bright, and effortlessly organized. Wide-plank white oak runs throughout, from the entry stair with its black iron balusters to an open living and dining room anchored by a fluted tile fireplace wall and floor-to-ceiling sliders onto the garden. The kitchen pairs warm oak cabinetry with a waterfall quartzite island, glass-front display cabinets, and soft toe-kick lighting that glows at night. Upstairs, a lounge with its own wet bar, calm layered bedrooms, a home office with a fluted walnut desk, and a spa-like primary bath complete a house built for how a busy family actually lives.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:3,room:"The kitchen"}],
+     cover:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-02.jpg",
+     images:[
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-01.jpg",alt:"Entry with a white oak staircase, black iron balusters, and a view through to the open living space"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-02.jpg",alt:"Open living and dining room with curved sofas, swivel chairs, and a fluted tile fireplace wall"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-03.jpg",alt:"Waterfall quartzite island with glowing toe-kick lighting, looking toward the living room"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-04.jpg",alt:"Kitchen with white oak cabinetry, a waterfall island, bouclé stools, and glass-front display cabinets"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-05.jpg",alt:"Kitchen galley with an oak range hood, pot filler, and lit glass-front cabinets"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-06.jpg",alt:"Home office with a fluted walnut desk, textured armchairs, and a large picture window"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-07.jpg",alt:"Upstairs lounge with a wet bar, fluted black coffee table, and double doors to the landing"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-08.jpg",alt:"Bedroom with an upholstered bed, oak bench, and a wall of windows onto the garden"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-09.jpg",alt:"Guest bedroom with an oak dresser, abstract art, and a plush gray rug"},
+      {src:"images/projects/cincinnati-modern/cincinnati-modern-home-interior-design-10.jpg",alt:"Primary bath with a long oak vanity, glass globe sconces, walk-in shower, and freestanding tub"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
