@@ -176,8 +176,8 @@ nav .inq{letter-spacing:.5em}
 .filters button[aria-pressed="true"]{border-color:currentColor}
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,36px)}
 .pgrid .project .photo{aspect-ratio:4/3}
-.pgrid .project:nth-child(3n+1){grid-column:1/-1}
-.pgrid .project:nth-child(3n+1) .photo{aspect-ratio:16/8}
+.pgrid .project:first-child{grid-column:1/-1}
+.pgrid .project:first-child .photo{aspect-ratio:16/8}
 
 /* project detail */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -265,7 +265,7 @@ address{font-style:normal;margin:0 0 1.1em}
 main:focus{outline:none}
 .hero > .fill{background-size:cover;background-position:center}
 .gallery .photo.wide img{object-position:center 62%}
-.pgrid .project:last-child:nth-child(3n+2){grid-column:1/-1}.pgrid .project:last-child:nth-child(3n+2) .photo{aspect-ratio:16/8}
+
 .gallery.ba .photo{aspect-ratio:4/3}
 .photo .ba-label{left:14px;top:14px;bottom:auto;background:rgba(58,45,92,.82);color:#fff;text-shadow:none;padding:6px 12px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
 @media (max-width:640px){.gallery.ba{grid-template-columns:1fr}}
