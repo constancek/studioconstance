@@ -32,7 +32,6 @@ The home hero is an inline SVG illustration; replace it with a full-bleed photog
 - [ ] Project gallery photos and photographer credit (project detail page)
 - [ ] Phone number (Inquire page)
 - [ ] Email: `hello@studio2kiwi.com` and `press@studio2kiwi.com` are placeholders
-- [ ] Service area wording in the "Based in Cincinnati" block on the home page
 - [ ] Investment ranges in the inquiry form dropdown
 
 ## Inquiry form
