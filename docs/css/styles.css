@@ -99,9 +99,9 @@ nav .inq{letter-spacing:.5em}
 /* press band */
 .press-band{background:var(--stone);padding:clamp(44px,6vw,72px) 0}
 .press-band .note{text-align:center;color:var(--muted);font-style:italic;font-family:var(--serif);margin-bottom:26px}
-.logos{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.logo-slot{aspect-ratio:3/1.2;border:1px dashed var(--stone-2);display:flex;align-items:center;justify-content:center;font-size:.7rem;letter-spacing:.14em;color:var(--muted);text-align:center;padding:6px}
-@media (max-width:760px){.logos{grid-template-columns:repeat(3,1fr)}}
+.logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,5vw,64px) clamp(36px,6vw,80px);--s:1}
+.plogo{width:calc(var(--w)*var(--s));height:calc(var(--h)*var(--s));background:var(--ink);opacity:.72;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+@media (max-width:760px){.logos{--s:.78}}
 
 /* cities band */
 .cities ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,4.5vw,64px);font-family:var(--serif);font-size:clamp(1.3rem,2.8vw,2.1rem)}
