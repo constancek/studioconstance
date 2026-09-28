@@ -53,8 +53,19 @@
       {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-13.jpg",alt:"Powder room with a floating Calacatta vanity, oak-framed mirror, and bronze sconces"},
       {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-14.jpg",alt:"Powder room grasscloth walls and a lit marble shelf beneath the floating vanity"}
      ]},
+    {id:"cincinnati-residence",name:"Cincinnati Residence",loc:"Cincinnati, Ohio",type:"Renovation & interior design",
+     text:"A family home in Cincinnati, renovated for light, warmth, and everyday ease. A white-oak arch frames the living room, where new wainscoting, a tiled fireplace with a pale oak mantel, and a sculptural three-light fixture set a calm, gallery-like backdrop for a boucle sofa, bentwood lounge chairs, and a plaster coffee table. In the kitchen, a bold violet-veined marble slab runs from backsplash to island, and a rounded oak island extends into a built-in dining table, so cooking, homework, and dinner all happen in one generous space. The dining room pairs an oak table and cane-back chairs with a brass and mesh linear pendant beneath paneled walls.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:3,room:"The kitchen"}],
+     images:[
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-01.jpg",alt:"Living room seen through a white oak arch, with a boucle sofa, bentwood chairs, and a tiled fireplace",wide:true},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-02.jpg",alt:"Living room with wainscoting, oak mantel, round mirror, and a plaster coffee table"},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-03.jpg",alt:"Bentwood lounge chair, olive tree, and plaster side table beside an oak arch"},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-04.jpg",alt:"Kitchen with violet-veined marble backsplash and a rounded oak island that extends into a dining table",wide:true},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-05.jpg",alt:"Dining room with a brass and mesh linear pendant, oak table, and cane-back chairs",wide:true,pos:"center 20%"}
+     ]},
     {id:"cincinnati-before-after",name:"Cincinnati Transformations",loc:"Cincinnati, Ohio",type:"Renovation & new construction",ba:true,
-     cover:"images/projects/cincinnati-before-after/cincinnati-kitchen-fluted-island-after.jpg",
+     cover:"images/projects/cincinnati-before-after/cincinnati-entry-staircase-after.jpg",
      text:"Four Cincinnati homes, before and after. From bare framing on a concrete slab to a finished kitchen with an arched hood alcove; from raw cabinet boxes to a fluted oak island and marble backsplash; from unfinished drywall to a scalloped oak staircase over checkerboard marble; and from an empty room to a light, welcoming dining space. Each one shows what Studio 2Kiwi does best: seeing the potential in a space, then carrying it all the way through to the finished home.",
      credit:"Designed by Constance Kent.",
      feature:[{i:3,room:"Kitchen transformation"}],
@@ -67,17 +78,6 @@
       {src:"images/projects/cincinnati-before-after/cincinnati-entry-staircase-after.jpg",alt:"Entry and staircase after: a curved oak stair with scalloped trim, glass-enclosed wine storage beneath, and checkerboard marble floors",label:"After"},
       {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-before.jpg",alt:"Dining room before: an empty room with orange-toned floors",label:"Before · Dining room"},
       {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-after.jpg",alt:"Dining room after: refinished pale oak floors, a walnut and stone dining table, and soft boucle chairs",label:"After"}
-     ]},
-    {id:"cincinnati-residence",name:"Cincinnati Residence",loc:"Cincinnati, Ohio",type:"Renovation & interior design",
-     text:"A family home in Cincinnati, renovated for light, warmth, and everyday ease. A white-oak arch frames the living room, where new wainscoting, a tiled fireplace with a pale oak mantel, and a sculptural three-light fixture set a calm, gallery-like backdrop for a boucle sofa, bentwood lounge chairs, and a plaster coffee table. In the kitchen, a bold violet-veined marble slab runs from backsplash to island, and a rounded oak island extends into a built-in dining table, so cooking, homework, and dinner all happen in one generous space. The dining room pairs an oak table and cane-back chairs with a brass and mesh linear pendant beneath paneled walls.",
-     credit:"Designed by Constance Kent.",
-     feature:[{i:3,room:"The kitchen"}],
-     images:[
-      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-01.jpg",alt:"Living room seen through a white oak arch, with a boucle sofa, bentwood chairs, and a tiled fireplace",wide:true},
-      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-02.jpg",alt:"Living room with wainscoting, oak mantel, round mirror, and a plaster coffee table"},
-      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-03.jpg",alt:"Bentwood lounge chair, olive tree, and plaster side table beside an oak arch"},
-      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-04.jpg",alt:"Kitchen with violet-veined marble backsplash and a rounded oak island that extends into a dining table",wide:true},
-      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-05.jpg",alt:"Dining room with a brass and mesh linear pendant, oak table, and cane-back chairs",wide:true,pos:"center 20%"}
      ]},
     {id:"cincinnati-modern-home",name:"Cincinnati Modern Home",loc:"Cincinnati, Ohio",type:"New construction & interior design",
      text:"A new-build family home in Cincinnati, designed to feel open, bright, and effortlessly organized. Wide-plank white oak runs throughout, from the entry stair with its black iron balusters to an open living and dining room anchored by a fluted tile fireplace wall and floor-to-ceiling sliders onto the garden. The kitchen pairs warm oak cabinetry with a waterfall quartzite island, glass-front display cabinets, and soft toe-kick lighting that glows at night. Upstairs, a lounge with its own wet bar, calm layered bedrooms, a home office with a fluted walnut desk, and a spa-like primary bath complete a house built for how a busy family actually lives.",
