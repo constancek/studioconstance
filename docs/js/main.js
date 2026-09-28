@@ -1,12 +1,23 @@
 (function(){
-  /* ---- Edit projects here: name, location, type, material class, description ---- */
+  /* ---- Portfolio projects. images[0] is the hero; "wide" spans the full gallery width ---- */
   var PROJECTS=[
-    {id:"project-one",name:"Project one",loc:"Cincinnati, Ohio",type:"Renovation",m:"m-travertine",text:"Project description. Describe the brief in the client’s words, what you heard underneath it, and how the finished home answers it."},
-    {id:"project-two",name:"Project two",loc:"Cincinnati, Ohio",type:"Furnishing",m:"m-walnut",text:"Project description. Describe the brief in the client’s words, what you heard underneath it, and how the finished home answers it."},
-    {id:"project-three",name:"Project three",loc:"Location",type:"New build",m:"m-plaster",text:"Project description. Describe the brief in the client’s words, what you heard underneath it, and how the finished home answers it."},
-    {id:"project-four",name:"Project four",loc:"Location",type:"Renovation",m:"m-hinoki",text:"Project description."},
-    {id:"project-five",name:"Project five",loc:"Location",type:"Furnishing",m:"m-slate",text:"Project description."},
-    {id:"project-six",name:"Project six",loc:"Location",type:"New build",m:"m-oxblood",text:"Project description."}
+    {id:"long-island-residence",name:"Long Island Residence",loc:"Long Island, New York",type:"Interior architecture & design",
+     text:"A Long Island residence planned around light, flow, and quiet drama. A portal of boldly veined marble frames the kitchen, and the same stone continues into a sculpted waterfall island with a softly rounded end, set against travertine floors, pale custom cabinetry, and a curved plaster range hood. In the living spaces, travertine-lined arches open onto an interior garden, a spiral stair sweeps up above an arched wine wall, and a hand-knotted blue rug, a paper lantern, and sculptural chairs bring calm, collected character to every room.",
+     credit:"Designed by Constance Kent in collaboration with SPACE DESIGN. Renderings by SPACE DESIGN.",
+     cover:"images/projects/long-island/long-island-ny-residence-interior-design-04.jpg",
+     feature:[{i:3,room:"The living room"},{i:6,room:"The stair and wine wall"},{i:7,room:"The kitchen"}],
+     images:[
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-01.jpg",alt:"Living room with travertine arches, curved sofa, paper lantern, and blue hand-knotted rug",wide:true},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-02.jpg",alt:"Living room arches with a view to the dining room and antique column"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-03.jpg",alt:"Arched openings onto an interior garden with a tree, kitchen beyond"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-04.jpg",alt:"Curved boucle sofa beneath travertine arches with a sculptural paper floor lamp"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-05.jpg",alt:"Paper lantern, horseshoe-back chair, and blue lacquered cabinet"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-06.jpg",alt:"Detail of a horseshoe-back chair and paper lantern beside an arched window"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-07.jpg",alt:"Sculptural spiral staircase with bronze mesh railing above an arched wine wall"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-08.jpg",alt:"Kitchen framed by a boldly veined marble portal with a waterfall island",wide:true},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-09.jpg",alt:"Marble waterfall island with a view through to the dining room"},
+      {src:"images/projects/long-island/long-island-ny-residence-interior-design-10.jpg",alt:"Curved plaster range hood over pale cabinetry and a travertine counter"}
+     ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
   var TESTIMONIALS=[
@@ -30,12 +41,16 @@
      n:"Natalie & Christopher R.",loc:""}
   ];
 
-  function card(p){
-    return '<a class="project" href="#project/'+p.id+'" data-type="'+p.type+'"><figure class="photo '+p.m+'"><figcaption>Project photograph</figcaption></figure><h3>'+p.name+'</h3><span>VIEW PROJECT</span></a>';
+  function card(p,img,label,sub){
+    var fig=img?'<figure class="photo"><img src="'+img+'" alt="" loading="lazy"></figure>':'<figure class="photo '+(p.m||'m-plaster')+'"><figcaption>Project photograph</figcaption></figure>';
+    return '<a class="project" href="#project/'+p.id+'" data-type="'+p.type+'">'+fig+'<h3>'+(label||p.name)+'</h3><span>'+(sub||'VIEW PROJECT')+'</span></a>';
   }
-  document.getElementById('home-projects').innerHTML=PROJECTS.slice(0,3).map(card).join('');
+  var homeCards=PROJECTS.length>=3?PROJECTS.slice(0,3).map(function(p){return card(p,p.cover)}):
+    PROJECTS[0].feature.map(function(f){var p=PROJECTS[0];return card(p,p.images[f.i].src,f.room,p.name.toUpperCase())});
+  document.getElementById('home-projects').innerHTML=homeCards.join('');
   var pgrid=document.getElementById('pgrid');
-  function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(card).join('');}
+  function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(function(p){return card(p,p.images?p.images[0].src:null)}).join('');}
+  if(PROJECTS.length<2)document.querySelector('.filters').style.display='none';
   renderGrid('all');
   document.querySelectorAll('.filters button').forEach(function(b){
     b.addEventListener('click',function(){
@@ -67,14 +82,17 @@
     if(known.indexOf(key)<0) key='home';
     if(key==='project'){
       var p=PROJECTS.filter(function(x){return x.id===parts[1]})[0]||PROJECTS[0];
-      document.getElementById('proj-hero').className='fill '+p.m;
+      var hero=document.getElementById('proj-hero');
+      hero.className='fill'; hero.style.backgroundImage='url('+p.images[0].src+')';
       document.getElementById('proj-title').textContent=p.name;
       document.getElementById('proj-sub').textContent=p.loc;
       document.getElementById('proj-text').textContent=p.text;
       document.getElementById('proj-loc').textContent=p.loc;
       document.getElementById('proj-scope').textContent=p.type;
-      var mats=['m-plaster','m-walnut','m-hinoki','m-travertine','m-linen'];
-      document.getElementById('proj-gallery').innerHTML='<figure class="photo wide '+p.m+'"><figcaption>Project photograph</figcaption></figure>'+mats.slice(0,4).map(function(m){return '<figure class="photo '+m+'"><figcaption>Project photograph</figcaption></figure>'}).join('');
+      document.getElementById('proj-credit').textContent=p.credit||'';
+      document.getElementById('proj-gallery').innerHTML=p.images.map(function(im){
+        return '<figure class="photo'+(im.wide?' wide':'')+'"><img src="'+im.src+'" alt="'+im.alt+'" loading="lazy"></figure>';
+      }).join('');
     }
     document.querySelectorAll('.page').forEach(function(pg){pg.classList.toggle('active',pg.id==='page-'+key)});
     document.querySelectorAll('nav a').forEach(function(a){

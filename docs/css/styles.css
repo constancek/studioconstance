@@ -263,3 +263,5 @@ address{font-style:normal;margin:0 0 1.1em}
 .audience h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1.25;margin-bottom:18px}
 .aud-kicker{font-size:.72rem;letter-spacing:.24em;color:var(--lacquer);margin-bottom:14px}
 main:focus{outline:none}
+.hero > .fill{background-size:cover;background-position:center}
+.gallery .photo.wide img{object-position:center 62%}
