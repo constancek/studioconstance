@@ -28,8 +28,6 @@ The home hero is an inline SVG illustration; replace it with a full-bleed photog
 - [ ] 3 client testimonials: `TESTIMONIALS` array at the top of `js/main.js`
 - [ ] 6 portfolio projects: `PROJECTS` array at the top of `js/main.js` (name, location, type, description)
 - [ ] Project gallery photos and photographer credit (project detail page)
-- [ ] Phone number (Inquire page)
-- [ ] Email: `hello@studio2kiwi.com` is a placeholder
 - [ ] Investment ranges in the inquiry form dropdown
 
 ## Inquiry form

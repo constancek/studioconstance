@@ -244,7 +244,7 @@
     if(!v('f-first')||!v('f-last')||!v('f-email')||!v('f-msg')){st.textContent='Please fill in your name, email, and a few words about your project.';return;}
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('f-email'))){st.textContent='Please enter a valid email address.';return;}
     var body=['Name: '+v('f-first')+' '+v('f-last'),'Email: '+v('f-email'),'Phone: '+v('f-phone'),'Project address: '+v('f-address'),'Project type: '+v('f-type'),'Investment range: '+v('f-budget'),'Ideal start: '+v('f-time'),'Heard about us: '+v('f-heard'),'','About the project:',v('f-msg')].join('\n');
-    window.location.href='mailto:hello@studio2kiwi.com?subject='+encodeURIComponent('Project inquiry from '+v('f-first')+' '+v('f-last'))+'&body='+encodeURIComponent(body);
+    window.location.href='mailto:info@studio2kiwi.com?subject='+encodeURIComponent('Project inquiry from '+v('f-first')+' '+v('f-last'))+'&body='+encodeURIComponent(body);
     st.textContent='Your email app should open with the inquiry ready to send.';
   });
 })();
