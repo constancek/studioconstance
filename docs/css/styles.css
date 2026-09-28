@@ -265,3 +265,4 @@ address{font-style:normal;margin:0 0 1.1em}
 main:focus{outline:none}
 .hero > .fill{background-size:cover;background-position:center}
 .gallery .photo.wide img{object-position:center 62%}
+.pgrid .project:last-child:nth-child(3n+2){grid-column:1/-1}.pgrid .project:last-child:nth-child(3n+2) .photo{aspect-ratio:16/8}

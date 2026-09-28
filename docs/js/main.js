@@ -17,6 +17,22 @@
       {src:"images/projects/long-island/long-island-ny-residence-interior-design-08.jpg",alt:"Kitchen framed by a boldly veined marble portal with a waterfall island",wide:true},
       {src:"images/projects/long-island/long-island-ny-residence-interior-design-09.jpg",alt:"Marble waterfall island with a view through to the dining room"},
       {src:"images/projects/long-island/long-island-ny-residence-interior-design-10.jpg",alt:"Curved plaster range hood over pale cabinetry and a travertine counter"}
+     ]},
+    {id:"brooklyn-basement-bar",name:"Brooklyn Basement Bar",loc:"Brooklyn, New York",type:"Basement bar & lounge",
+     text:"A Brooklyn basement reimagined as a warm, sunlit-feeling bar and lounge. A curved plaster bar anchors the room, lined with sculptural oak stools upholstered in blush and lit by brass mushroom lamps. Behind it, an antiqued brass back bar sits between arched plaster niches with glowing glass shelving, while a hand-carved botanical frieze runs along the ceiling. An oak-paneled wine wall, a patterned terrazzo floor, and a garden-framed window wall with twin yellow velvet banquettes turn a below-grade space into a room you’d never want to leave.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:0,room:"The bar"},{i:8,room:"The lounge"}],
+     images:[
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-01.jpg",alt:"Curved plaster bar with five sculptural oak stools, brass mushroom lamps, and an antiqued brass back bar",wide:true},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-02.jpg",alt:"Bar seating with a yellow velvet banquette beyond and a hand-carved botanical plaster frieze"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-03.jpg",alt:"Arched plaster niches with lit glass shelving beside the antiqued brass back bar"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-04.jpg",alt:"Rounded bar counter with oak cabinetry, brass lamps, and protea arrangements"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-05.jpg",alt:"Front view of the bar with pink-upholstered oak stools and botanical plaster relief"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-06.jpg",alt:"Long view through the bar to a garden-framed window wall with rounded oak mullions"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-07.jpg",alt:"Oak-paneled wine wall with lit glass-front cabinets beside the bar"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-08.jpg",alt:"The bar and wine wall seen from the entry, with patterned terrazzo tile floor"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-09.jpg",alt:"Lounge with twin yellow velvet banquettes and brass lamps before a garden window wall"},
+      {src:"images/projects/brooklyn-bar/brooklyn-ny-basement-bar-design-10.jpg",alt:"Yellow velvet banquette in afternoon light with a round plaster side table"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
@@ -45,12 +61,14 @@
     var fig=img?'<figure class="photo"><img src="'+img+'" alt="" loading="lazy"></figure>':'<figure class="photo '+(p.m||'m-plaster')+'"><figcaption>Project photograph</figcaption></figure>';
     return '<a class="project" href="#project/'+p.id+'" data-type="'+p.type+'">'+fig+'<h3>'+(label||p.name)+'</h3><span>'+(sub||'VIEW PROJECT')+'</span></a>';
   }
-  var homeCards=PROJECTS.length>=3?PROJECTS.slice(0,3).map(function(p){return card(p,p.cover)}):
-    PROJECTS[0].feature.map(function(f){var p=PROJECTS[0];return card(p,p.images[f.i].src,f.room,p.name.toUpperCase())});
+  var homeCards=[[0,3],[0,7],[1,0]].filter(function(x){return PROJECTS[x[0]]}).map(function(x){
+    var p=PROJECTS[x[0]],f=p.feature.filter(function(f){return f.i===x[1]})[0];
+    return card(p,p.images[x[1]].src,f?f.room:p.name,p.name.toUpperCase());
+  });
   document.getElementById('home-projects').innerHTML=homeCards.join('');
   var pgrid=document.getElementById('pgrid');
   function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(function(p){return card(p,p.images?p.images[0].src:null)}).join('');}
-  if(PROJECTS.length<2)document.querySelector('.filters').style.display='none';
+  if(PROJECTS.length<3)document.querySelector('.filters').style.display='none';
   renderGrid('all');
   document.querySelectorAll('.filters button').forEach(function(b){
     b.addEventListener('click',function(){
