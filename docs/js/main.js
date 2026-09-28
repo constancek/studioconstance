@@ -255,10 +255,12 @@
       st.textContent='Your email app should open with the inquiry ready to send.';
       return;
     }
-    var payload={access_key:FORM_KEY,subject:'New project inquiry from '+name,from_name:'Studio 2Kiwi website',replyto:v('f-email')};
-    Object.keys(fields).forEach(function(k){payload[k]=fields[k]});
+    var payload=new FormData();
+    payload.append('access_key',FORM_KEY); payload.append('subject','New project inquiry from '+name);
+    payload.append('from_name','Studio 2Kiwi website'); payload.append('replyto',v('f-email'));
+    Object.keys(fields).forEach(function(k){payload.append(k,fields[k])});
     sendBtn.disabled=true; st.textContent='Sending…';
-    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:payload})
       .then(function(r){return r.json()})
       .then(function(res){
         if(!res.success)throw new Error(res.message);
