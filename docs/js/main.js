@@ -4,7 +4,6 @@
     {id:"long-island-residence",name:"Long Island Residence",loc:"Long Island, New York",type:"Interior architecture & design",
      text:"A Long Island residence planned around light, flow, and quiet drama. A portal of boldly veined marble frames the kitchen, and the same stone continues into a sculpted waterfall island with a softly rounded end, set against travertine floors, pale custom cabinetry, and a curved plaster range hood. In the living spaces, travertine-lined arches open onto an interior garden, a spiral stair sweeps up above an arched wine wall, and a hand-knotted blue rug, a paper lantern, and sculptural chairs bring calm, collected character to every room.",
      credit:"Designed by Constance Kent in collaboration with SPACE DESIGN. Renderings by SPACE DESIGN.",
-     cover:"images/projects/long-island/long-island-ny-residence-interior-design-04.jpg",
      feature:[{i:3,room:"The living room"},{i:6,room:"The stair and wine wall"},{i:7,room:"The kitchen"}],
      images:[
       {src:"images/projects/long-island/long-island-ny-residence-interior-design-01.jpg",alt:"Living room with travertine arches, curved sofa, paper lantern, and blue hand-knotted rug",wide:true},
@@ -53,6 +52,21 @@
       {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-12.jpg",alt:"Dressing room with oak wardrobes, a marble-topped island, and a hanging round mirror"},
       {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-13.jpg",alt:"Powder room with a floating Calacatta vanity, oak-framed mirror, and bronze sconces"},
       {src:"images/projects/manhattan-condo/manhattan-nyc-condo-interior-design-14.jpg",alt:"Powder room grasscloth walls and a lit marble shelf beneath the floating vanity"}
+     ]},
+    {id:"cincinnati-before-after",name:"Cincinnati Transformations",loc:"Cincinnati, Ohio",type:"Renovation & new construction",ba:true,
+     cover:"images/projects/cincinnati-before-after/cincinnati-kitchen-fluted-island-after.jpg",
+     text:"Four Cincinnati homes, before and after. From bare framing on a concrete slab to a finished kitchen with an arched hood alcove; from raw cabinet boxes to a fluted oak island and marble backsplash; from unfinished drywall to a scalloped oak staircase over checkerboard marble; and from an empty room to a light, welcoming dining space. Each one shows what Studio 2Kiwi does best: seeing the potential in a space, then carrying it all the way through to the finished home.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:3,room:"Kitchen transformation"}],
+     images:[
+      {src:"images/projects/cincinnati-before-after/cincinnati-kitchen-plaster-hood-before.jpg",alt:"Kitchen with arched hood alcove before: framed shell with bare studs and a concrete slab",label:"Before · Kitchen with arched hood alcove"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-kitchen-plaster-hood-after.jpg",alt:"Kitchen with arched hood alcove after: white-oak cabinetry, a plaster range hood in an arched tile alcove, and a four-seat island",label:"After"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-kitchen-fluted-island-before.jpg",alt:"Open kitchen and family room before: unfinished cabinet boxes and a raw drywall island",label:"Before · Open kitchen and family room"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-kitchen-fluted-island-after.jpg",alt:"Open kitchen and family room after: a fluted oak island with a curved waterfall end, marble backsplash, bronze hood, and a black pantry wall",label:"After"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-entry-staircase-before.jpg",alt:"Entry and staircase before: raw drywall and an unfinished scalloped stair stringer",label:"Before · Entry and staircase"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-entry-staircase-after.jpg",alt:"Entry and staircase after: a curved oak stair with scalloped trim, glass-enclosed wine storage beneath, and checkerboard marble floors",label:"After"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-before.jpg",alt:"Dining room before: an empty room with orange-toned floors",label:"Before · Dining room"},
+      {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-after.jpg",alt:"Dining room after: refinished pale oak floors, a walnut and stone dining table, and soft boucle chairs",label:"After"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
@@ -87,7 +101,7 @@
   });
   document.getElementById('home-projects').innerHTML=homeCards.join('');
   var pgrid=document.getElementById('pgrid');
-  function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(function(p){return card(p,p.images?p.images[0].src:null)}).join('');}
+  function renderGrid(f){pgrid.innerHTML=PROJECTS.filter(function(p){return f==='all'||p.type===f}).map(function(p){return card(p,p.cover||p.images[0].src)}).join('');}
   document.querySelector('.filters').style.display='none';
   renderGrid('all');
   document.querySelectorAll('.filters button').forEach(function(b){
@@ -121,7 +135,7 @@
     if(key==='project'){
       var p=PROJECTS.filter(function(x){return x.id===parts[1]})[0]||PROJECTS[0];
       var hero=document.getElementById('proj-hero');
-      hero.className='fill'; hero.style.backgroundImage='url('+p.images[0].src+')';
+      hero.className='fill'; hero.style.backgroundImage='url('+(p.cover||p.images[0].src)+')';
       document.getElementById('proj-title').textContent=p.name;
       document.getElementById('proj-sub').textContent=p.loc;
       document.getElementById('proj-text').textContent=p.text;
@@ -129,8 +143,9 @@
       document.getElementById('proj-scope').textContent=p.type;
       document.getElementById('proj-credit').textContent=p.credit||'';
       document.getElementById('proj-gallery').innerHTML=p.images.map(function(im){
-        return '<figure class="photo'+(im.wide?' wide':'')+'"><img src="'+im.src+'" alt="'+im.alt+'" loading="lazy"></figure>';
+        return '<figure class="photo'+(im.wide?' wide':'')+'"><img src="'+im.src+'" alt="'+im.alt+'" loading="lazy">'+(im.label?'<figcaption class="ba-label">'+im.label+'</figcaption>':'')+'</figure>';
       }).join('');
+      document.getElementById('proj-gallery').classList.toggle('ba',!!p.ba);
     }
     document.querySelectorAll('.page').forEach(function(pg){pg.classList.toggle('active',pg.id==='page-'+key)});
     document.querySelectorAll('nav a').forEach(function(a){
