@@ -67,6 +67,17 @@
       {src:"images/projects/cincinnati-before-after/cincinnati-entry-staircase-after.jpg",alt:"Entry and staircase after: a curved oak stair with scalloped trim, glass-enclosed wine storage beneath, and checkerboard marble floors",label:"After"},
       {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-before.jpg",alt:"Dining room before: an empty room with orange-toned floors",label:"Before · Dining room"},
       {src:"images/projects/cincinnati-before-after/cincinnati-dining-room-after.jpg",alt:"Dining room after: refinished pale oak floors, a walnut and stone dining table, and soft boucle chairs",label:"After"}
+     ]},
+    {id:"cincinnati-residence",name:"Cincinnati Residence",loc:"Cincinnati, Ohio",type:"Renovation & interior design",
+     text:"A family home in Cincinnati, renovated for light, warmth, and everyday ease. A white-oak arch frames the living room, where new wainscoting, a tiled fireplace with a pale oak mantel, and a sculptural three-light fixture set a calm, gallery-like backdrop for a boucle sofa, bentwood lounge chairs, and a plaster coffee table. In the kitchen, a bold violet-veined marble slab runs from backsplash to island, and a rounded oak island extends into a built-in dining table, so cooking, homework, and dinner all happen in one generous space. The dining room pairs an oak table and cane-back chairs with a brass and mesh linear pendant beneath paneled walls.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:3,room:"The kitchen"}],
+     images:[
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-01.jpg",alt:"Living room seen through a white oak arch, with a boucle sofa, bentwood chairs, and a tiled fireplace",wide:true},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-02.jpg",alt:"Living room with wainscoting, oak mantel, round mirror, and a plaster coffee table"},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-03.jpg",alt:"Bentwood lounge chair, olive tree, and plaster side table beside an oak arch"},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-04.jpg",alt:"Kitchen with violet-veined marble backsplash and a rounded oak island that extends into a dining table",wide:true},
+      {src:"images/projects/cincinnati-residence/cincinnati-oh-home-interior-design-05.jpg",alt:"Dining room with a brass and mesh linear pendant, oak table, and cane-back chairs",wide:true,pos:"center 20%"}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
@@ -143,7 +154,7 @@
       document.getElementById('proj-scope').textContent=p.type;
       document.getElementById('proj-credit').textContent=p.credit||'';
       document.getElementById('proj-gallery').innerHTML=p.images.map(function(im){
-        return '<figure class="photo'+(im.wide?' wide':'')+'"><img src="'+im.src+'" alt="'+im.alt+'" loading="lazy">'+(im.label?'<figcaption class="ba-label">'+im.label+'</figcaption>':'')+'</figure>';
+        return '<figure class="photo'+(im.wide?' wide':'')+'"><img src="'+im.src+'" alt="'+im.alt+'"'+(im.pos?' style="object-position:'+im.pos+'"':'')+' loading="lazy">'+(im.label?'<figcaption class="ba-label">'+im.label+'</figcaption>':'')+'</figure>';
       }).join('');
       document.getElementById('proj-gallery').classList.toggle('ba',!!p.ba);
     }
