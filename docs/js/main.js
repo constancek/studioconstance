@@ -237,14 +237,35 @@
   });
   nav.addEventListener('click',function(e){if(e.target.tagName==='A'&&nav.classList.contains('open'))btn.click();});
 
-  // inquiry form: opens an email draft to the studio
-  document.getElementById('f-send').addEventListener('click',function(){
+  // inquiry form: sends through Web3Forms to the studio inbox; falls back to an email draft
+  var FORM_KEY='';   /* paste the Web3Forms access key here */
+  var STUDIO_EMAIL='info@studio2kiwi.com';
+  var sendBtn=document.getElementById('f-send');
+  sendBtn.addEventListener('click',function(){
     var v=function(id){return document.getElementById(id).value.trim()};
     var st=document.getElementById('f-status');
     if(!v('f-first')||!v('f-last')||!v('f-email')||!v('f-msg')){st.textContent='Please fill in your name, email, and a few words about your project.';return;}
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('f-email'))){st.textContent='Please enter a valid email address.';return;}
-    var body=['Name: '+v('f-first')+' '+v('f-last'),'Email: '+v('f-email'),'Phone: '+v('f-phone'),'Project address: '+v('f-address'),'Project type: '+v('f-type'),'Investment range: '+v('f-budget'),'Ideal start: '+v('f-time'),'Heard about us: '+v('f-heard'),'','About the project:',v('f-msg')].join('\n');
-    window.location.href='mailto:info@studio2kiwi.com?subject='+encodeURIComponent('Project inquiry from '+v('f-first')+' '+v('f-last'))+'&body='+encodeURIComponent(body);
-    st.textContent='Your email app should open with the inquiry ready to send.';
+    if(v('f-botcheck'))return;
+    var name=v('f-first')+' '+v('f-last');
+    var fields={'Name':name,'Email':v('f-email'),'Phone':v('f-phone'),'Project address':v('f-address'),'Project type':v('f-type'),'Investment range':v('f-budget'),'Ideal start':v('f-time'),'Heard about us':v('f-heard'),'About the project':v('f-msg')};
+    if(!FORM_KEY){
+      var body=Object.keys(fields).map(function(k){return k+': '+fields[k]}).join('\n');
+      window.location.href='mailto:'+STUDIO_EMAIL+'?subject='+encodeURIComponent('Project inquiry from '+name)+'&body='+encodeURIComponent(body);
+      st.textContent='Your email app should open with the inquiry ready to send.';
+      return;
+    }
+    var payload={access_key:FORM_KEY,subject:'New project inquiry from '+name,from_name:'Studio 2Kiwi website',replyto:v('f-email')};
+    Object.keys(fields).forEach(function(k){payload[k]=fields[k]});
+    sendBtn.disabled=true; st.textContent='Sending…';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){return r.json()})
+      .then(function(res){
+        if(!res.success)throw new Error(res.message);
+        document.querySelectorAll('#inq-form input,#inq-form textarea').forEach(function(el){el.value=''});
+        st.textContent='Thank you. Your inquiry is on its way, and the studio will reply within two business days.';
+      })
+      .catch(function(){st.innerHTML='Something went wrong. Please email <a href="mailto:'+STUDIO_EMAIL+'">'+STUDIO_EMAIL+'</a> or call (513) 952-8676.';})
+      .then(function(){sendBtn.disabled=false});
   });
 })();
