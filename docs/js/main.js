@@ -83,7 +83,10 @@
     });
     var titles={home:'Studio 2Kiwi | Interior Architecture & Design',studio:'The Studio | Studio 2Kiwi',services:'Services | Studio 2Kiwi',portfolio:'Portfolio | Studio 2Kiwi',project:'Portfolio | Studio 2Kiwi',inquire:'Inquire | Studio 2Kiwi'};
     document.title=titles[key];
-    window.scrollTo(0,0); onScroll();
+    window.scrollTo(0,0);
+    var anchor=key!=='project'&&parts[1]&&document.getElementById(parts[1]);
+    if(anchor)anchor.scrollIntoView();
+    onScroll();
   }
   function onScroll(){
     var hero=document.querySelector('.page.active .hero');
@@ -91,6 +94,13 @@
     head.classList.toggle('solid', !hero || !dark || window.scrollY > hero.offsetHeight-80);
   }
   window.addEventListener('hashchange',route);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');
+    if(!a)return;
+    var h=a.getAttribute('href');
+    if(h==='#main'){e.preventDefault();var m=document.getElementById('main');m.focus();window.scrollTo(0,0);return;}
+    if(h===(location.hash||'#home')){e.preventDefault();route();}
+  });
   window.addEventListener('scroll',onScroll,{passive:true});
   route();
 
