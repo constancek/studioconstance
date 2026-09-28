@@ -109,6 +109,18 @@
       {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-06.jpg",alt:"Upstairs lounge with a black kitchenette, green leather swivel chairs, and a graphic black-and-white rug"},
       {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-07.jpg",alt:"Primary bedroom with a tray ceiling, bouclé bed and bench, and a pair of swivel chairs"},
       {src:"images/projects/columbus-modern/columbus-oh-modern-home-interior-design-08.jpg",alt:"Primary bedroom looking toward the ensuite bath and balcony doors"}
+     ]},
+    {id:"louisville-residence",name:"Louisville Residence",loc:"Louisville, Kentucky",type:"New construction & interior design",
+     text:"A dramatic new-build family home in Louisville, designed for gathering. The great room rises beneath a vaulted ceiling traced with dark arched beams and a row of arched clerestory windows, anchored by a floor-to-ceiling book-matched stone fireplace and a pair of brass ring chandeliers. Twin islands in charcoal and white quartz organize the kitchen for cooking and entertaining at once, with a glass-walled wine room steps away. Beyond the main floor, the house trades restraint for personality: a family room wrapped in a blue-and-gold wallcovering, a navy game room under a vaulted beam, and a guest suite with a stacked stone wall and a fretwork-framed sitting nook, all opening onto a pool terrace built for long summer evenings.",
+     credit:"Designed by Constance Kent.",
+     feature:[{i:0,room:"The great room"}],
+     images:[
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-01.jpg",alt:"Great room under a vaulted ceiling with dark arched beams, a book-matched stone fireplace wall, twin islands, and a brass ring chandelier",wide:true},
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-02.jpg",alt:"Kitchen with charcoal cabinetry, a waterfall quartz island, arched clerestory windows, and a glass wine wall",wide:true},
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-03.jpg",alt:"Family room with a bold blue and gold wallcovering, marble coffee table, and sculptural ring chandelier"},
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-04.jpg",alt:"Game room with a navy accent wall, vaulted beam ceiling, green glass chandelier, and window seat"},
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-05.jpg",alt:"Guest suite with a stacked stone wall, blue beamed ceiling, disc chandelier, and a fretwork-framed sitting nook",wide:true},
+      {src:"images/projects/louisville/louisville-ky-home-interior-design-06.jpg",alt:"Pool terrace beneath arched windows with a cedar pergola and outdoor kitchen",wide:true}
      ]}
   ];
   /* ---- Client testimonials: headline, paragraphs, names, neighborhood ---- */
