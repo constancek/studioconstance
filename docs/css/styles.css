@@ -273,3 +273,8 @@ main:focus{outline:none}
 
 .hero h1,.hero p.sub{text-shadow:0 2px 24px rgba(20,12,36,.45)}
 .form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* testimonials: stack every slide in one cell so the block keeps the tallest height */
+#testi-box{display:grid}
+.testi-slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s;display:flex;flex-direction:column;justify-content:center}
+.testi-slide.on{opacity:1;visibility:visible}
